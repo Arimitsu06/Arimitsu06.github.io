@@ -1,0 +1,87 @@
+---
+layout: default
+title: Home
+body_class: home
+---
+
+<section class="hero">
+  <canvas class="particles" data-text="{{ site.name }}" data-fit="0.78" data-intro="true" data-match=".contact canvas" data-match-scale="1.5" data-mode="pulse" data-flow="true" aria-hidden="true"></canvas>
+  <h1 class="sr-only">{{ site.name }}</h1>
+
+  <div class="wrap hero-foot">
+    <p class="hero-tagline">{{ site.tagline | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    <dl class="hero-meta">
+      <!-- {% if site.studying %}<div><dt>Studying</dt><dd>{{ site.studying }}</dd></div>{% endif %} -->
+      {% if site.location %}<div><dt>Based in</dt><dd>{{ site.location }}</dd></div>{% endif %}
+      {% if site.timezone %}<div><dt>Local time</dt><dd class="clock" data-tz="{{ site.timezone }}">--:--</dd></div>{% endif %}
+    </dl>
+  </div>
+  <a class="scroll-cue" href="#about"><span>Scroll</span></a>
+</section>
+
+<main>
+  <section class="section wrap" id="about">
+    <div class="section-label" data-reveal><span>(01)</span> About</div>
+    <div class="section-body">
+      <div class="about-intro" data-reveal>
+        <figure class="about-photo">
+          {% if site.photo %}
+          <img src="{{ site.photo | prepend: '/assets/img/' | relative_url }}" alt="Photo of {{ site.full_name | default: site.name }}">
+          {% else %}
+          <span class="about-photo-empty" aria-hidden="true">{{ site.name | slice: 0 }}</span>
+          {% endif %}
+        </figure>
+        <div class="about-main">
+          <h2 class="about-name">{{ site.full_name | default: site.name }}</h2>
+          {% if site.studying %}<p class="about-sub">{{ site.studying }}</p>{% endif %}
+          <div class="about-text">{{ site.about | markdownify }}</div>
+        </div>
+      </div>
+      {% if site.facts %}
+      <dl class="facts">
+        {% for f in site.facts %}
+          <div data-reveal><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+        {% endfor %}
+      </dl>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="section wrap" id="research">
+    <div class="section-label" data-reveal><span>(02)</span> Research</div>
+    <div class="section-body">
+      <ol class="research-list">
+        {% assign selected = site.data.research | where: "selected", true %}
+        {% for r in selected %}{% include research-entry.html item=r %}{% endfor %}
+      </ol>
+      <a class="more" href="{{ '/research/' | relative_url }}" data-reveal>All research <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <section class="section wrap" id="projects">
+    <div class="section-label" data-reveal><span>(03)</span> Projects</div>
+    <div class="section-body">
+      <ol class="work-list">
+        {% assign selected = site.data.projects | where: "selected", true %}
+        {% for w in selected %}{% include project-row.html item=w index=forloop.index %}{% endfor %}
+      </ol>
+      <a class="more" href="{{ '/projects/' | relative_url }}" data-reveal>All projects <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <section class="section wrap" id="experience">
+    <div class="section-label" data-reveal><span>(04)</span> Experience</div>
+    <div class="section-body">
+      <ul class="rows">
+        {% for e in site.data.experience %}
+        <li data-reveal>
+          <div class="row row-static">
+            <span class="row-when">{{ e.when }}</span>
+            <span class="row-title">{{ e.role }}<span class="row-org">{{ e.org }}</span><span class="row-sub">{{ e.note }}</span></span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>

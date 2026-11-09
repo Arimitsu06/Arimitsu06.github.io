@@ -1,0 +1,41 @@
+---
+layout: default
+title: Resume
+permalink: /resume/
+---
+{% assign pdf = site.static_files | where: "path", site.resume_pdf | first %}
+<main class="page wrap">
+  <header class="resume-head">
+    <h1 class="page-title" data-reveal>Resume</h1>
+    {% if pdf %}
+    <p class="page-intro" data-reveal>
+      Last updated {{ pdf.modified_time | date: "%B %Y" }}. Download the PDF, or read it below.
+    </p>
+    <div class="resume-actions" data-reveal>
+      <a class="btn btn-primary" href="{{ site.resume_pdf | relative_url }}" download>
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M10 3v9m0 0-3.5-3.5M10 12l3.5-3.5M4 14.5V16h12v-1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download Resume
+      </a>
+      <a class="btn" href="{{ site.resume_pdf | relative_url }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M11 4h5v5m0-5-7 7M14 11.5V16H4V6h4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Open in new tab
+      </a>
+    </div>
+    {% else %}
+    <p class="page-intro" data-reveal>
+      No resume uploaded yet. Add your PDF at <code>{{ site.resume_pdf }}</code> and it will appear here.
+    </p>
+    {% endif %}
+  </header>
+
+  {% if pdf %}
+  <div class="resume-frame" data-reveal>
+    <object data="{{ site.resume_pdf | relative_url }}#view=FitH&navpanes=0" type="application/pdf" aria-label="Resume PDF">
+      <p class="resume-fallback">
+        Your browser can't show the PDF here —
+        <a href="{{ site.resume_pdf | relative_url }}" target="_blank" rel="noopener">open it in a new tab</a>.
+      </p>
+    </object>
+  </div>
+  {% endif %}
+</main>

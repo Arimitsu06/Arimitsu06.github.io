@@ -1,0 +1,15 @@
+# Experience, newest first. (Education lives in _data/education.yml.)
+- when: Nov 2025 — Now
+  role: SURF Fellow, Undergraduate Researcher
+  org: Caltech Anima AI + Science Lab
+  note: Developing neural operators and graph neural networks to accelerate quantum chemistry simulations.
+
+- when: Jan 2025 - Jan 2026
+  role: Research Analyst I
+  org: University of Kentucky ICU Recovery Clinic
+  note: Developed and deployed AI-powered tools and GUIs in PyQt, accelerating clinicians' workflows by 99.8%, saving over 8 days of manual analysis on 6 clinical research projects (3 published so far).
+
+- when: Nov 2023 — Aug 2025
+  role: Researcher
+  org: University of Kentucky Institute for Biomedical Informatics
+  note: Curated a multi-site dataset of musculoskeletal ultrasound images and developed deep learning models to automatically extract clinical parameters.

@@ -1,0 +1,23 @@
+<footer class="contact" id="contact">
+  <div class="contact-stage">
+    <canvas class="particles" data-text="Say hello" data-fit="0.9" data-mode="attract" aria-hidden="true"></canvas>
+    <h2 class="sr-only">Say hello</h2>
+  </div>
+
+  <div class="wrap contact-body">
+    {% if site.email %}
+      <a class="contact-email" href="mailto:{{ site.email }}">{{ site.email }}<span class="arrow">↗</span></a>
+    {% endif %}
+    <ul class="contact-links">
+      {% for s in site.socials %}
+        <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}<span class="arrow">↗</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="wrap colophon">
+    <span>© {{ site.time | date: "%Y" }} {{ site.name }}</span>
+    <span>Set in Inter &amp; Instrument Serif</span>
+    <a href="#top" class="to-top">Back to top ↑</a>
+  </div>
+</footer>

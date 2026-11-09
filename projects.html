@@ -1,0 +1,39 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<main class="page wrap">
+  <header class="page-head">
+    <p class="page-kicker" data-reveal>Projects</p>
+    <h1 class="page-title" data-reveal>Things I’ve <em>made</em>.</h1>
+    <p class="page-intro" data-reveal>
+      Tools, experiments, and projects.
+    </p>
+  </header>
+
+  <ol class="project-list">
+    {% for p in site.data.projects %}
+    <li class="project" data-reveal>
+      <a class="project-media" href="{{ p.url }}"{% if p.url contains '://' %} target="_blank" rel="noopener"{% endif %} tabindex="-1" aria-hidden="true">
+        {% if p.image %}<img src="{{ p.image | prepend: '/assets/img/' | relative_url }}" alt="" loading="lazy">{% endif %}
+      </a>
+      <div class="project-body">
+        <p class="project-meta"><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>{{ p.kind }} · {{ p.year }}</p>
+        <h2 class="project-title"><a href="{{ p.url }}"{% if p.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ p.title }}</a></h2>
+        {% if p.details.first %}
+        <ul class="project-points">
+          {% for d in p.details %}<li>{{ d | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}
+        </ul>
+        {% else %}
+        <p class="project-details">{{ p.details | default: p.summary }}</p>
+        {% endif %}
+        <div class="chips">
+          {% for t in p.tags %}<span class="chip">{{ t }}</span>{% endfor %}
+          {% for l in p.links %}<a class="chip chip-link" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a>{% endfor %}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</main>

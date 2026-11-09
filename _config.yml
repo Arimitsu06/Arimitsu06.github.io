@@ -1,1 +1,79 @@
-theme: jekyll-theme-slate
+# -----------------------------------------------------------------------------
+# About you. Everything marked SAMPLE is placeholder text — replace it.
+# -----------------------------------------------------------------------------
+name: Ari                     # drawn in particles on the opening screen
+title: Ari
+description: Personal website of Ari.
+url: https://arimitsu06.github.io
+baseurl: ""
+
+# One or two sentences under your name. *Asterisks* make words italic. (SAMPLE)
+tagline: >-
+  Building things that make an *impact*, from software to research.
+
+# Your resume — drop the PDF at this path and it shows on /resume/
+resume_pdf: /assets/pdf/resume.pdf
+
+# How your name appears in author lists — each is highlighted on research entries.
+# Put longer forms first.
+author_names:
+  - Arimitsu Horikawa-Strakovsky
+  - Ari
+
+# Small details in the opening screen. Leave any of these empty to hide it.
+studying: CS and Bio Minor at Caltech
+location: Pasadena, CA, USA           # SAMPLE
+timezone: America/Los_Angeles         # SAMPLE — shows your live local time (IANA name)
+
+# About section header: a photo (file in assets/img/, square crops best) next to
+# your name, with `studying` underneath as the subtitle.
+photo: headshot.png                               # e.g. ari.jpg — leave empty for a placeholder
+full_name: Arimitsu (Ari) Horikawa-Strakovsky
+
+# The "About" section. Markdown works: *italics* are purple; add {:.pulse} right after
+# (*like this*{:.pulse}) to use the pulse color instead — red by day, blue at night.
+about: >-
+  Hi I'm Ari. I'm a researcher and *SURF Fellow*{:.pulse} at Caltech's Anima AI + Science Lab focusing on
+  applying *AI to quantum chemistry*. Previously, I was a *Research Analyst I*{:.pulse} at the University
+  of Kentucky ICU Recovery Clinic, where I built AI-powered tools and GUIs to accelerate clinicians' 
+  analysis of *musculoskeletal ultrasound images*.
+
+# Short facts shown under the About text (label / value pairs).
+facts:                                   # SAMPLE
+  - label: Languages
+    value: Python, Java, C, HTML/CSS, SQL
+  - label: Libraries
+    value: PyTorch, TensorFlow, OpenCV, scikit-learn, PySCF, pandas, NumPy
+  - label: Hobbies
+    value: Soccer, Gym, Travel
+
+# email: arimitsu0803@gmail.com                                  # you@example.com — shown in the contact section
+socials:
+  - label: Email
+    url: mailto:arimitsu0803@gmail.com
+  - label: GitHub
+    url: https://github.com/Arimitsu06
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/arimitsu-06
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=_lM0UZcAAAAJ&hl=en
+
+# -----------------------------------------------------------------------------
+# Jekyll
+# -----------------------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor
+  - .bundle

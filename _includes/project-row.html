@@ -1,0 +1,13 @@
+{% assign w = include.item %}
+<li data-reveal>
+  <a class="work-row" href="{{ w.url | default: '/projects/' }}"{% if w.url contains '://' %} target="_blank" rel="noopener"{% endif %}{% if w.image %} data-preview="{{ w.image | prepend: '/assets/img/' | relative_url }}"{% endif %}>
+    <span class="work-idx">{{ include.index | prepend: '0' | slice: -2, 2 }}</span>
+    <span class="work-main">
+      <span class="work-title">{{ w.title }}</span>
+      <span class="work-desc">{{ w.summary }}</span>
+    </span>
+    <span class="work-kind">{{ w.kind }}</span>
+    <span class="work-year">{{ w.year }}</span>
+    <span class="work-arrow">↗</span>
+  </a>
+</li>

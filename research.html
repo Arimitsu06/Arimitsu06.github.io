@@ -1,0 +1,25 @@
+---
+layout: default
+title: Research
+permalink: /research/
+---
+<main class="page wrap">
+  <header class="page-head">
+    <p class="page-kicker" data-reveal>Research</p>
+    <h1 class="page-title" data-reveal>Questions I’m <em>working on</em>.</h1>
+    <p class="page-intro" data-reveal>
+      I'm interested in developing and applying AI methods to various fields, from quantum chemistry to medical imaging and others. 
+      * indicates co-first author with equal contribution.
+    </p>
+  </header>
+
+  {% assign by_year = site.data.research | group_by: "year" | sort: "name" | reverse %}
+  {% for group in by_year %}
+  <section class="year-group">
+    <h2 class="year" data-reveal>{{ group.name }}</h2>
+    <ol class="research-list research-list-full">
+      {% for r in group.items %}{% include research-entry.html item=r full=true %}{% endfor %}
+    </ol>
+  </section>
+  {% endfor %}
+</main>

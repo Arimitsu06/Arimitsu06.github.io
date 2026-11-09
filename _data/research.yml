@@ -1,0 +1,91 @@
+# Research — shown on /research/. Entries with `selected: true` also appear on the home page.
+# ALL ENTRIES ARE SAMPLES — replace them.
+#
+# Fields (all optional except title):
+#   title, authors, venue, year, status (e.g. "Under review"), summary, tags,
+#   links: list of { label, url }   — paper, code, slides, poster…
+#   image: a figure in assets/img/ — shown trailing the cursor when hovering the entry
+# Your name in `authors` is highlighted automatically (matches `name` in _config.yml).
+
+- title: Learning Surrogate AI Models for Quantum Chemistry
+  year: 2026
+  status: In Progress
+  ongoing: true
+  selected: true
+  summary: >-
+    Own molecule-focused branch of project, contributing over 5,000 lines to a shared codebase. Preliminary results show agreement with PBE0 reaction barrier heights of <1 kcal/mol with semi-local cost.
+  tags: [AI, Quantum Chemistry, Neural Operators, PyTorch, PySCF]
+
+- title: "OrbitAll: a unified quantum mechanical representation deep learning framework for all molecular systems"
+  authors: "*Beom Seok Kang, *Vignesh C Bhethanabotla, Amin Tavakoli, Maurice D Hanisch, Arimitsu Horikawa-Strakovsky, Miguel Nouman, Danish Khan, William A Goddard III, Anima Anandkumar"
+  venue: Nature Computational Science
+  year: 2026
+  selected: true
+  image: orbitall_fig.svg
+  summary: >-
+    Built evaluation and finetuning pipelines for OrbitAll, a physics-informed graph neural network for quantum chemistry energy prediction. 
+    Discovered chemical regime where OrbitAll has flat error while the state-of-the-art UMA model (Meta FAIR) exponentially increases.
+  tags: [AI, Quantum Chemistry, Graph Neural Networks, PyTorch, tblite]
+  links:
+    - label: Paper
+      url: https://arxiv.org/abs/2507.03853
+
+- title: Development of an artificial intelligence powered software for automated analysis of skeletal muscle ultrasonography
+  authors: "*Zoe Calulo Rivera, *Felipe González-Seguel, *Arimitsu Horikawa-Strakovsky, Catherine Granger, Aarti Sarwal, Sanjay Dhar, George Ntoumenopoulos, Jin Chen, VK Cody Bumgardner, Selina M Parry, Kirby P Mayer, Yuan Wen"
+  venue: Scientific Reports
+  year: 2025
+  selected: true
+  image: myovision-us.png
+  summary: >-
+    Sole developer of MyoVision-US, an AI-powered software for automated analysis of skeletal muscle ultrasonography. Achieved ICC 0.85-0.99 versus experts and reduced analysis time by 99.8%. Co-first author.
+  links:
+    - label: Paper
+      url: https://www.nature.com/articles/s41598-025-99522-7
+  tags: [AI, Computer Vision, Medical Imaging, Segmentation, Transformers, CNNs, PyTorch, OpenCV]
+
+- title: Open-Source AI for Vastus Lateralis and Adipose Tissue Segmentation to Assess Muscle Size and Quality
+  authors: McKenzie S White, Arimitsu Horikawa-Strakovsky, Kirby P Mayer, Brian W Noehren, Yuan Wen
+  venue: Ultrasound In Medicine & Biology
+  year: 2025
+  image: acl_us.png
+  summary: >-
+    Developed open-source deep learning models for automated muscle size and quality assessment from ultrasound images. Achieved ICC >0.98 versus experts.
+  links:
+    - label: Paper
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0301562925003102
+    - label: Code
+      url: https://github.com/kenziew/ultrasound_vl_csa_and_ei/tree/main
+  tags: [AI, Computer Vision, Medical Imaging, Segmentation, Transformers, CNNs, PyTorch, OpenCV]
+
+- title: "Acute skeletal muscle wasting in patients with acute kidney injury requiring continuous kidney replacement therapy: a prospective multicenter study"
+  authors: "*Kirby P Mayer, *J Pedro Teixeira, Felipe González-Seguel, Vinh Q Tran, Jessica M Gross, Arimitsu Horikawa-Strakovsky, Chaitanya Anil Pal, Zan T Shareef, Hayley Puffer Israel, Yuan Wen, Benjamin R Griffin, Javier A Neyra"
+  venue: Journal of Critical Care
+  year: 2025
+  summary: >-
+    Deployed AI-powered tools, accelerating clinicians' analysis of ultrasounds in a multicenter clinical study, saving over 48 hours of manual analysis.
+  links:
+    - label: Paper
+      url: https://www.sciencedirect.com/science/article/abs/pii/S0883944125001297
+  tags: [AI, Computer Vision, Medical Imaging, Segmentation, PyTorch, Clinical Research]
+
+- title: "Inter-rater reliability of muscle ultrasonography performed by multidisciplinary novice sonographers in the evaluation of critically ill patients with acute kidney injury requiring continuous kidney replacement therapy"
+  authors: Felipe González-Seguel, Vinh Q Tran, Chaitanya Anil Pal, Zan T Shareef, Hayley P Israel, Arimitsu Horikawa-Strakovsky, Yuan Wen, Benjamin R Griffin, Javier A Neyra, J Pedro Teixeira, Kirby P Mayer
+  venue: Renal Failure
+  year: 2025
+  summary: >-
+    Deployed AI-powered tools, accelerating clinicians' analysis of ultrasounds in a multicenter clinical study, saving over 2 hours of manual analysis.
+  links:
+    - label: Paper
+      url: https://www.tandfonline.com/doi/full/10.1080/0886022X.2025.2472990
+  tags: [AI, Computer Vision, Medical Imaging, Segmentation, PyTorch, Clinical Research]
+
+- title: "Assessing the reliability of interprofessional raters on peripheral muscle ultrasonography in pediatric oncology: A prospective observational study"
+  authors: "Corey Hawes, Felipe González-Seguel, Arimitsu Horikawa-Strakovsky, Yuan Wen, Senna Munnikhuysen, Kirby P Mayer"
+  venue: Nutrition in Clinical Practice
+  year: 2026
+  summary: >-
+    Deployed AI-powered tools, accelerating clinicians' analysis of ultrasounds in a multicenter clinical study, saving over 4 hours of manual analysis.
+  links:
+    - label: Paper
+      url: https://aspenjournals.onlinelibrary.wiley.com/doi/abs/10.1002/ncp.70071
+  tags: [AI, Computer Vision, Medical Imaging, Segmentation, PyTorch, Clinical Research]

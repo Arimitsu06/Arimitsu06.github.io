@@ -1,0 +1,25 @@
+{% assign r = include.item %}
+{% comment %} Swap each of your names for a placeholder first, so a short name
+   ("Ari") can't match inside a longer one ("Arimitsu") already highlighted. {% endcomment %}
+{% assign names = site.author_names | default: site.name %}
+{% assign byline = r.authors %}
+{% for n in names %}{% capture token %}@@{{ forloop.index }}@@{% endcapture %}{% assign byline = byline | replace: n, token %}{% endfor %}
+{% for n in names %}{% capture token %}@@{{ forloop.index }}@@{% endcapture %}{% capture me %}<span class="me">{{ n }}</span>{% endcapture %}{% assign byline = byline | replace: token, me %}{% endfor %}
+<li class="research" data-reveal{% if r.image %} data-preview="{{ r.image | prepend: '/assets/img/' | relative_url }}"{% endif %}>
+  <div class="research-when">{{ r.year }}</div>
+  <div class="research-main">
+    <h3 class="research-title">{% if r.links and r.links.size > 0 %}<a href="{{ r.links[0].url }}" target="_blank" rel="noopener">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</h3>
+    <p class="research-byline">
+      {% if r.authors %}{{ byline }}{% endif %}
+      {% if r.venue %}<span class="research-venue">{{ r.venue }}</span>{% endif %}
+      {% if r.status %}<span class="research-status">{{ r.status }}</span>{% endif %}
+    </p>
+    {% if include.full and r.summary %}<p class="research-summary">{{ r.summary }}</p>{% endif %}
+    {% if include.full %}
+    <div class="chips">
+      {% for l in r.links %}<a class="chip chip-link" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a>{% endfor %}
+      {% for t in r.tags %}<span class="chip">{{ t }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</li>

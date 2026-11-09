@@ -1,0 +1,122 @@
+# Projects — shown on /projects/. Entries with `selected: true` also appear on the home page,
+# where hovering a row shows `image` trailing the cursor.
+#
+# Fields: title, kind, year, summary (one line), details (a paragraph, or a list of bullets —
+#         Markdown works, e.g. **bold**), image (in assets/img/),
+#         url (main link), tags, links: list of { label, url }, selected
+
+- title: Open-Source PyQt GUI for AI-Powered Muscle Size & Quality Analysis
+  kind: Research/clinical tool
+  year: 2025
+  selected: true
+  summary: Allows clinicians to analyze vastus lateralis size and quality from panoramic ultrasound images in seconds.
+  details:
+    - >-
+      A GUI built on Napari, a PyQt image viewer, which runs segmentation
+      models on panoramic ultrasounds, postprocesses model predictions with OpenCV
+      and outlines the vastus lateralis muscle and the subcutaneous fat layer above it.
+    - >-
+      Predictions come back as **editable polygons**, so a clinician can adjudicate
+      before anything is saved, and the GUI automatically calculates clinical parameters.
+    - >-
+      Batch-runs whole folders, resumable sessions, and writes every measurement to a single CSV.
+    - >-
+      Released open-source with models alongside a paper in
+      *Ultrasound in Medicine & Biology*.
+  image: vl_python_gui.png
+  url: https://github.com/kenziew/ultrasound_vl_csa_and_ei/tree/main/NAPARI_DCM_GUI
+  tags: [Python, PyTorch, PyQt, OpenCV, Computer Vision, AI, Medical Imaging]
+  links:
+    - label: Code
+      url: https://github.com/kenziew/ultrasound_vl_csa_and_ei/tree/main/NAPARI_DCM_GUI
+
+- title: Revisiting Self-Supervised Label Augmentation for Continual Learning
+  kind: Independent Research
+  year: 2025
+  selected: true
+  summary:  
+    Developed a method beating the state-of-the-art on CIFAR-100 and Tiny-ImageNet benchmarks, winning the 4th Grand Award in Robotics & Intelligent Machines at Regeneron International Science and Engineering Fair.
+  details:
+    - >-
+      Continual learning asks a model to learn new information while retaining previous information, usually
+      through multiple tasks.
+    - >-
+      I revisited **self-supervised label augmentation** (SSLA) and adapted it to
+      exemplar-free class-incremental learning, a subfield of continual learning.
+    - >-
+      Through theoretical analysis, I made principled changes: distilling knowledge only on the non-augmented class logits,
+      and applying SSLA just on the first task. I also developed frequency-domain augmentations in place of rotations as 
+      previous SSLA methods required certain variances.
+    - >-
+      Beat the state-of-the-art method AdaGauss (NeurIPS '24) on last task accuracy by 2.5%  on CIFAR-100 and 2.7% on Tiny-ImageNet.
+    - >-
+      Won the **4th Grand Award in Robotics & Intelligent Machines** at Regeneron ISEF.
+  image: ssla_fig.svg
+  url: https://github.com/Arimitsu06/revisit_ssla
+  tags: [Python, PyTorch, PyCIL, Computer Vision, Continual Learning, Self-Supervised Learning]
+  links:
+    - label: Code
+      url: https://github.com/Arimitsu06/revisit_ssla
+
+- title: "BirdCLEF: Classifying Endangered Bird Species from Soundscapes"
+  kind: Kaggle Competition
+  year: 2022
+  selected: true
+  summary: Trained ECA-NFNet models and EfficientNetV2 models on mel spectrograms of bird calls, placing 17th out of 801 teams in the BirdCLEF 2022 competition. 
+  details:
+    - >-
+      BirdCLEF 2022 is a Kaggle competition to classify endangered bird species from soundscapes recorded in the wild.
+    - >-
+      Turned audio into **mel spectrograms**, then trained ECA-NFNet and EfficientNetV2 models on them. Tuned hyperparameters and tried many
+      techniques, including mixup, background noise, pink noise, pretraining on previous competition data, and attention heads.
+    - >-
+      Placed **17th of 801 teams** on the leaderboard (0.81 public / 0.77 private leaderboard).
+  image: birdclef_fig.png
+  url: https://www.kaggle.com/competitions/birdclef-2022/writeups/ari-enzo-simple-17th-place-solution-0-81-public-0-
+  tags: [Python, PyTorch, Audio Classification]
+  links:
+    - label: Write-up
+      url: https://www.kaggle.com/competitions/birdclef-2022/writeups/ari-enzo-simple-17th-place-solution-0-81-public-0-
+
+- title: Sartorius Neuron Instance Segmentation
+  kind: Kaggle Competition/Jupyter Notebooks
+  year: 2021
+  selected: true
+  summary: Trained a Cascade Mask R-CNN model in MMDetection and open-sourced my data preprocessing, training, and submission Jupyter notebooks gaining over 450 upvotes and 900 forks.
+  details:
+    - >-
+      This Kaggle competition asked competitors to segment neurons in microscopy images, 
+      a particularly challenging instance segmentation task, due to the density and many neurons adjacent to one another.
+    - >-
+      Trained a **Cascade Mask R-CNN** with MMDetection, converted the competition's
+      annotations into COCO format for training.
+    - >-
+      Open-sourced the full pipeline as three notebooks (preprocessing, training, and
+      submission), which became a common starting point for other competitors with
+      **450+ upvotes and 900+ forks**.
+  image: sartorius_fig.png
+  url: https://www.kaggle.com/code/vexxingbanana/sartorius-mmdetection-training/notebook
+  links:
+    - label: Kaggle Notebook
+      url: https://www.kaggle.com/code/vexxingbanana/sartorius-mmdetection-training/notebook
+  tags: [Python, PyTorch, MMDetection, Computer Vision, Instance Segmentation]
+
+- title: YoloV1 from Scratch
+  kind: Jupyter Notebook
+  year: 2021
+  selected: false
+  summary: Implemented the original YoloV1 object detection model from scratch in PyTorch, and trained it on a custom fruit object detection dataset.
+  details:
+    - >-
+      Rebuilt YOLOv1, a foundational object detection architecture, from the original paper in PyTorch and a video guide.
+    - >-
+      Implemented the architecture and its multi-part sum-squared loss (box coordinates, confidence, and
+      class terms) by hand. Trained the model on a fruit detection dataset. 
+    - >-
+      Published notebook on Kaggle, gaining 350+ upvotes and 700+ forks.
+  url: https://www.kaggle.com/code/vexxingbanana/yolov1-from-scratch-pytorch/notebook
+  image: yolo_v1_fig.png
+  links:
+    - label: Kaggle Notebook
+      url: https://www.kaggle.com/code/vexxingbanana/yolov1-from-scratch-pytorch/notebook
+  tags: [Python, PyTorch, Computer Vision, Object Detection]
