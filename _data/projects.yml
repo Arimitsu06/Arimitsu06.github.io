@@ -12,14 +12,14 @@
   summary: Allows clinicians to analyze vastus lateralis size and quality from panoramic ultrasound images in seconds.
   details:
     - >-
-      A GUI built on Napari, a PyQt image viewer, which runs segmentation
-      models on panoramic ultrasounds, postprocesses model predictions with OpenCV
+      A GUI built on Napari, a **PyQt** image viewer, which runs segmentation
+      models on panoramic ultrasounds, postprocesses model predictions with **OpenCV**
       and outlines the vastus lateralis muscle and the subcutaneous fat layer above it.
     - >-
       Predictions come back as **editable polygons**, so a clinician can adjudicate
       before anything is saved, and the GUI automatically calculates clinical parameters.
     - >-
-      Batch-runs whole folders, resumable sessions, and writes every measurement to a single CSV.
+      **Batch-runs** whole folders, resumable sessions, and writes every measurement to a single CSV.
     - >-
       Released open-source with models alongside a paper in
       *Ultrasound in Medicine & Biology*.
@@ -44,13 +44,13 @@
       I revisited **self-supervised label augmentation** (SSLA) and adapted it to
       exemplar-free class-incremental learning, a subfield of continual learning.
     - >-
-      Through theoretical analysis, I made principled changes: distilling knowledge only on the non-augmented class logits,
+      Through theoretical analysis, I made **principled changes**: distilling knowledge only on the non-augmented class logits,
       and applying SSLA just on the first task. I also developed frequency-domain augmentations in place of rotations as 
-      previous SSLA methods required certain variances.
+      previous SSLA methods required **certain variances** in images.
     - >-
-      Beat the state-of-the-art method AdaGauss (NeurIPS '24) on last task accuracy by 2.5%  on CIFAR-100 and 2.7% on Tiny-ImageNet.
+      Beat the state-of-the-art method AdaGauss (NeurIPS '24) on last task accuracy by **2.5% on CIFAR-100** and **2.7% on Tiny-ImageNet**.
     - >-
-      Won the **4th Grand Award in Robotics & Intelligent Machines** at Regeneron ISEF.
+      Won the **4th Grand Award in Robotics & Intelligent Machines** at the Regeneron International Science & Engineering Fair.
   image: ssla_fig.svg
   url: https://github.com/Arimitsu06/revisit_ssla
   tags: [Python, PyTorch, PyCIL, Computer Vision, Continual Learning, Self-Supervised Learning]
@@ -67,8 +67,8 @@
     - >-
       BirdCLEF 2022 is a Kaggle competition to classify endangered bird species from soundscapes recorded in the wild.
     - >-
-      Turned audio into **mel spectrograms**, then trained ECA-NFNet and EfficientNetV2 models on them. Tuned hyperparameters and tried many
-      techniques, including mixup, background noise, pink noise, pretraining on previous competition data, and attention heads.
+      Turned audio into **mel spectrograms**, then trained **ECA-NFNet** and **EfficientNetV2** models on them. Tuned hyperparameters and tried many
+      techniques, including mixup, background noise, pink noise, pretraining on previous competition data, and **attention heads**.
     - >-
       Placed **17th of 801 teams** on the leaderboard (0.81 public / 0.77 private leaderboard).
   image: birdclef_fig.png
@@ -108,12 +108,12 @@
   summary: Implemented the original YoloV1 object detection model from scratch in PyTorch, and trained it on a custom fruit object detection dataset.
   details:
     - >-
-      Rebuilt YOLOv1, a foundational object detection architecture, from the original paper in PyTorch and a video guide.
+      Rebuilt **YOLOv1**, a foundational **object detection** architecture, from the original paper in PyTorch and a video guide.
     - >-
-      Implemented the architecture and its multi-part sum-squared loss (box coordinates, confidence, and
+      Implemented the architecture and its **multi-part sum-squared loss** (box coordinates, confidence, and
       class terms) by hand. Trained the model on a fruit detection dataset. 
     - >-
-      Published notebook on Kaggle, gaining 350+ upvotes and 700+ forks.
+      Published notebook on Kaggle, gaining **350+ upvotes and 700+ forks**.
   url: https://www.kaggle.com/code/vexxingbanana/yolov1-from-scratch-pytorch/notebook
   image: yolo_v1_fig.png
   links:
