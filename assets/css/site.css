@@ -610,6 +610,7 @@ a:hover > .arrow { transform: translate(2px, -2px); }
   line-height: 1;
   letter-spacing: -0.045em;
   text-wrap: balance;
+  color: var(--accent);
 }
 .page-title em { color: var(--accent); }
 .page-intro { margin: 32px 0 0; max-width: 52ch; font-size: 18px; line-height: 1.6; color: var(--fg-soft); }
