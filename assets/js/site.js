@@ -726,8 +726,8 @@
       items.push('<span class="item" data-pdb="' + c.pdb + '"><span class="name">' + c.name.replace(/\s*\(.*\)$/, "") + ' </span>' +
         '<a href="https://www.rcsb.org/structure/' + c.pdb + '" target="_blank" rel="noopener">' + c.pdb + '</a></span>');
     });
-    cap.innerHTML = '<span class="lead">Folded from</span>' + items.join(' <span class="sep">·</span> ') +
-      '<span class="hint">Click the name to unfold and refold it</span>';
+    cap.innerHTML = '<span class="lead">Made from</span>' + items.join(' <span class="sep">·</span> ') +
+      '<span class="hint">Click to unfold/fold</span>';
     cap.hidden = false;
 
     // Hover: label by the cursor + highlight the matching caption entry
