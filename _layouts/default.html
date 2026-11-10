@@ -40,6 +40,7 @@
   {% include contact.html %}
 
   <div class="preview" aria-hidden="true"><img alt=""></div>
+  {% if page.body_class == "home" %}<script src="{{ '/assets/js/proteins.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
   <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>

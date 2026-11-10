@@ -5,9 +5,10 @@ body_class: home
 ---
 
 <section class="hero">
-  <canvas class="particles" data-text="{{ site.name }}" data-fit="0.78" data-intro="true" data-match=".contact canvas" data-match-scale="1.5" data-mode="pulse" data-flow="true" aria-hidden="true"></canvas>
+  <canvas class="particles" data-text="{{ site.name }}" data-fit="0.78" data-intro="true" data-match=".contact canvas" data-match-scale="1.5" data-mode="none" data-flow="true" data-style="protein" aria-hidden="true"></canvas>
   <h1 class="sr-only">{{ site.name }}</h1>
 
+  <p class="hero-structures" hidden></p>
   <div class="wrap hero-foot">
     <p class="hero-tagline">{{ site.tagline | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
     <dl class="hero-meta">
@@ -16,7 +17,6 @@ body_class: home
       {% if site.timezone %}<div><dt>Local time</dt><dd class="clock" data-tz="{{ site.timezone }}">--:--</dd></div>{% endif %}
     </dl>
   </div>
-  <a class="scroll-cue" href="#about"><span>Scroll</span></a>
 </section>
 
 <main>

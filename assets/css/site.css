@@ -181,7 +181,55 @@ em { font-style: italic; }
   overflow: hidden;
 }
 .particles { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.particles[data-style="protein"] { cursor: pointer; }
 .hero .particles { top: 6%; bottom: auto; height: 62%; }
+
+/* Caption under the protein name: which real structures it's folded from */
+.hero-structures {
+  position: absolute;
+  left: 50%;
+  top: calc(68% + 6px);
+  translate: -50% 0;
+  width: min(92vw, 980px);
+  margin: 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+.hero-structures .lead { display: block; text-transform: uppercase; letter-spacing: 0.08em; }
+.hero-structures .item { white-space: nowrap; }
+.hero-structures .sep { margin: 0 0.3em; opacity: 0.5; }
+.hero-structures a { color: var(--fg-soft); border-bottom: 1px solid var(--line); transition: color 0.3s, border-color 0.3s; }
+.hero-structures a:hover { color: var(--accent); border-color: var(--accent); }
+.hero-structures .hint { display: block; opacity: 0.7; }
+.hero-structures .item { transition: color 0.25s; }
+.hero-structures .item.active { color: var(--fg); }
+.hero-structures .item.active a { color: var(--accent); border-color: var(--accent); }
+.protein-tip {
+  position: fixed;
+  left: 0; top: 0;
+  z-index: 45;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.protein-tip.show { opacity: 1; }
+.protein-tip .tip-name { font-size: 14px; color: var(--fg); }
+.protein-tip .tip-id { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--accent); }
+.js .hero-structures { opacity: 0; transition: opacity 1.2s var(--ease) 0.6s; }
+.js.ready .hero-structures { opacity: 1; }
 
 .hero-foot {
   position: absolute;
@@ -218,36 +266,11 @@ em { font-style: italic; }
 .hero-meta dt { color: var(--muted); }
 .hero-meta dd { margin: 0; color: var(--fg); font-variant-numeric: tabular-nums; }
 
-.scroll-cue {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(28px, 5vh, 56px);
-  translate: -50% 0;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.scroll-cue::after {
-  content: "";
-  width: 1px;
-  height: 36px;
-  background: linear-gradient(var(--muted), transparent);
-  animation: drip 2.4s var(--ease) infinite;
-  transform-origin: top;
-}
-@keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
 
 /* Intro: hero text arrives after the particles start assembling */
-.js .hero-foot > *, .js .scroll-cue { opacity: 0; transform: translateY(16px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease); }
+.js .hero-foot > * { opacity: 0; transform: translateY(16px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease); }
 .js .hero-foot > :nth-child(2) { transition-delay: 0.15s; }
-.js .scroll-cue { transition-delay: 0.4s; }
-.js.ready .hero-foot > *, .js.ready .scroll-cue { opacity: 1; transform: none; }
+.js.ready .hero-foot > * { opacity: 1; transform: none; }
 
 /* ==========================================================================
    Sections
@@ -465,7 +488,7 @@ a.row:hover .row-arrow { transform: translateX(4px); color: var(--accent); }
   align-items: baseline;
   justify-content: space-between;
   gap: 1.5rem 3rem;
-  padding-block: 8px 64px;
+  padding-block: 8px calc(64px + env(safe-area-inset-bottom, 0px));
 }
 .contact-email {
   font-family: var(--sans);
@@ -490,20 +513,6 @@ a.row:hover .row-arrow { transform: translateX(4px); color: var(--accent); }
 .arrow { display: inline-block; margin-left: 0.35em; font-family: var(--sans); transition: transform 0.4s var(--ease); }
 a:hover > .arrow { transform: translate(2px, -2px); }
 
-.colophon {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem 2rem;
-  padding-block: 22px calc(22px + env(safe-area-inset-bottom, 0px));
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.to-top:hover { color: var(--fg); }
 
 /* ==========================================================================
    Research
@@ -714,9 +723,11 @@ a:hover > .arrow { transform: translate(2px, -2px); }
    ========================================================================== */
 @media (max-width: 760px) {
   .hero .particles { top: 14%; height: 50%; }
+  .hero-structures { top: calc(64% + 4px); font-size: 10.5px; }
+  .hero-structures .name { display: none; }
+  .hero-structures .lead { display: inline; margin-right: 0.6em; }
   .hero-foot { grid-template-columns: 1fr; gap: 28px; }
   .hero-meta { justify-self: stretch; }
-  .scroll-cue { display: none; }
 
   .section { grid-template-columns: 1fr; gap: 28px; }
   .section-label { position: static; }

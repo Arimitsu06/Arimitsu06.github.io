@@ -41,11 +41,11 @@ about: >-
 # Short facts shown under the About text (label / value pairs).
 facts:                                   # SAMPLE
   - label: Languages
-    value: Python, Java, C, HTML/CSS, SQL
+    value: Python, Java, C, HTML/CSS, SQL, ARM Assembly
   - label: Libraries
     value: PyTorch, TensorFlow, OpenCV, scikit-learn, PySCF, pandas, NumPy
   - label: Hobbies
-    value: Soccer, Gym, Travel
+    value: Soccer, Gym, UberEats Connoisseur
 
 # email: arimitsu0803@gmail.com                                  # you@example.com — shown in the contact section
 socials:
