@@ -25,7 +25,7 @@ W_A = H_A * ASPECT
 PIECES = [
   ("1IC2", [("A", 1, 999, None), ("B", 1, 999, None)], "Tropomyosin N-terminal coiled coil (dimer 1)", (0.09, 0.91), (0.32, 0.10), "narrow"),
   ("1IC2", [("C", 1, 999, None), ("D", 1, 999, None)], "Tropomyosin N-terminal coiled coil (dimer 2)", (0.352, 0.07), (0.338, 0.94), "narrow"),
-  ("2MLT", [("A", 1, 999, None)],                       "Melittin",                (0.205, 0.64), (0.318, 0.64), "wide"),
+  ("2MAG", [("A", 1, 999, None)],                       "Magainin 2",              (0.205, 0.64), (0.318, 0.64), "wide"),
   ("2KB7", [("P", 1, 999, None)],                       "Phospholamban",           (0.582, 0.39), (0.509, 1.02), ("axis", 24, 53, 1, 19)),
   ("1KQL", [("A", 1, 999, None), ("B", 1, 999, None)], "Tropomyosin C-terminal coiled coil", (0.918, 0.34), (0.857, 0.92), "narrow"),
   ("1L2Y", [("A", 1, 999, None)],                       "Trp-cage",                (0.912, 0.105), None,          "wide"),
