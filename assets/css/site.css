@@ -147,10 +147,18 @@ em { font-style: italic; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.theme-toggle svg { transition: transform 0.6s var(--ease); }
-.theme-toggle:hover svg { transform: rotate(180deg); }
-[data-theme="light"] .theme-toggle svg { transform: rotate(180deg); }
-[data-theme="light"] .theme-toggle:hover svg { transform: rotate(360deg); }
+/* Sun by day; at night the rays draw in and a shadow slides over the disc
+   to leave a crescent. Night is the default, day overrides. */
+.theme-toggle { padding: 4px; margin: -4px; }
+.sunmoon { overflow: visible; transition: transform 0.6s var(--ease); }
+.sunmoon .sun-core { transform-origin: 12px 12px; transform: scale(1.65); transition: transform 0.6s var(--ease); }
+.sunmoon .moon-shadow { transform: translate(-8px, 4px); transition: transform 0.6s var(--ease); }
+.sunmoon .sun-rays { transform-origin: 12px 12px; transform: rotate(-30deg) scale(0.4); opacity: 0; transition: transform 0.6s var(--ease), opacity 0.35s var(--ease); }
+[data-theme="light"] .sunmoon .sun-core { transform: scale(1); }
+[data-theme="light"] .sunmoon .moon-shadow { transform: translate(0, 0); }
+[data-theme="light"] .sunmoon .sun-rays { transform: none; opacity: 1; }
+.theme-toggle:hover .sunmoon { transform: rotate(-12deg); }
+[data-theme="light"] .theme-toggle:hover .sunmoon { transform: rotate(22deg); }
 .topbar-nav a, .back {
   position: relative;
   font-family: var(--mono);
@@ -742,7 +750,6 @@ a:hover > .arrow { transform: translate(2px, -2px); }
   .row-org { display: block; margin: 4px 0 0; }
   .row-org::before { content: none; }
 
-  .theme-label { display: none; }
   .about-intro { grid-template-columns: 1fr; }
   .about-photo { width: 160px; }
   .research { grid-template-columns: 1fr; gap: 6px; }
